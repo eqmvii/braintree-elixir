@@ -135,6 +135,7 @@ defmodule Braintree.PaymentMethod do
   end
 
   defp new(%{"apple_pay_card" => apple_pay_card}) do
+    raise inspect apple_pay_card, pretty: true, limit: :infinity
     ApplePayCard.new(apple_pay_card)
   end
 end
